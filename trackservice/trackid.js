@@ -9,7 +9,7 @@ app.use(express.json());
 // Load Mongoose
 const { Mongoose } = require('mongoose');
 const mongoose = require('mongoose');
-require("./tid")
+require("./TID")
 const TID = mongoose.model("ID")
 
 
@@ -33,7 +33,7 @@ app.get("/", (req, res) =>
 
 //New Tracking Id
 app.post("/track", (req, res) => {
-    const newTrack = new tid({
+    const newTrack = new TID({
         idno: req.body.TrackingNumber
     })
 
