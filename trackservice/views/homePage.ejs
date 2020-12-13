@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Welcome to the official Going Merry Courier site.">
+    <meta name="author" content="Eric Varghese">
+    <title>Going Merry</title>
+    <link rel="stylesheet" href="./css/tracking.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div id="Title">
+          <h1>Going Merry Courier Service</h1>
+          <img src="./Images/Going Merry.jpg" alt="Company logo">
+        </div>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <h1>Please Enter Your Tracking Number</h1>
+        
+        <p>Enter the tracking number to track the delivery of the product</p>
+        
+        <form class="" action="http://localhost:5000/track" method="POST">
+          
+          <label>Tracking Number</label>
+          <input type="Number" name="TrackingNumber" placeholder="Enter Tracking Number">
+          <button type="Submit" class="search_Button">Enter</button>
+        
+        </form>
+          
+        
+        <!-- <form class="" action="http://localhost:5000/search" method="POST"> -->
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script>
+            function func(){
+              var data =document.getElementById("tr_no").value;
+                axios
+            .post("http://localhost:5000/search",{t_no:data}) 
+            .then(res=>{
+              console.log(res.data);
+              if(res.data == true){
+                location.assign("http://localhost:5001/"+data)
+              }
+              else{
+                alert("The Tracking ID does not exist!!");
+                document.getElementById("tr_no").value="";
+              }
+
+            })
+           .catch(err=>{
+                alert("The Tracking ID does not exist!!");
+            });
+                
+            }
+          </script>
+
+
+
+          <label>Tracking Number</label>
+          <input id="tr_no" type="Number" name="SearchNumber" placeholder="Enter Tracking Number">
+          <button type="Submit" class="search_Button" onclick="func()">Search</button>
+        
+        <!-- </form> -->
+
+      </div>
+    </section>
+
+    <footer>
+      <p>Going Merry Courier, Copyright &copy; 2020</p>
+    </footer>
+
+  </body>
+
+</html>

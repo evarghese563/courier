@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Welcome to the official Going Merry Courier site.">
+        <meta name= "author" content="Eric Varghese">
+        <title>Going Merry</title>
+        <link rel="stylesheet" href="/TrackService/public/css/tracking.css">
+    </head>
+<script>
+  function func(){
+    var linkVal = window.location.href;
+                linkVal = linkVal.split('/');
+                console.log(linkVal);
+                document.getElementById("track_no").innerHTML=linkVal[3];
+  }
+</script>
+    <body onload="func()">
+        <header>
+          <div class="container">
+            <div id="Title">
+              <h1>Going Merry Courier Service</h1>
+              <img src="./Images/download.jpg" alt="Company logo">
+            </div>
+          </div>
+        </header>
+        <h1>Thank you for Confirming your Tracking Number</h1>
+        <h1 id ="track_no"></h1>
+    </body>
+
+    <section id="showcase">
+        <div class="container">
+         
+
+          </form>
+  
+  
+        </div>
+      </section>
+
+
+
+</html>
